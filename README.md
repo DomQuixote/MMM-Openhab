@@ -6,14 +6,21 @@
 
 ## How it works
 
-The module displays all values from your Openhab sitemap. You can also change
-all values and switches (like lites, temperature and s.o.)
+The module displays an Openhab sitemap on your Magic Mirror. If you have a mouse or touchscreen,
+all values and switches (like lights, temperature and s.o.) can be changed.
+The only thing you need is local access to your running Openhab System, no API key is required.
 
-After the installation u can find an example of an Openhab2 (version 2.2) modified sitemap file
-using the html and css values fitting for MagicMirror. Copy them to your Openhab2 config dir 
-into html. Now all u have to do is add a line at the beginning of your sitemap:
 
-example:
+
+* No translation needed cause the sidemap from your own (in your native language written) is displayed
+
+## Installation
+
+* git clone this repository into the `~/MagicMirror/modules` directory.
+
+* Annotated .css file are included to match Magic Mirror coloring text and header. Copy the contents of MMM-Openhab/Openhab2/html to the html directory of your openhab install configuration.
+
+* Create a sitemap in your openhab installation. To match the magic mirror color scheme, add the following line to the beginning of your sitemap.
 
 	sitemap MMM label="MMM-Openhab"
 	{
@@ -21,29 +28,17 @@ example:
 		Webview url="/static/MMM-View.html"
 		...
 	}
+	
+An example of an Openhab2 (version 2.2) modified sitemap file using the html and css values for MagicMirror can be found in the repo. 
 
-Dont wonder about the "/static"  this is the same as "/html" but Openhab2 wants it this way.
-
-* Annotated .css file included for aligning and coloring text and header.
-
-## Installation
-
-* git clone https://github.com/tbbear/MMM-Openhab` into the `~/MagicMirror/modules` directory.
-
-* No API key needed! Only a running Openhab System.
-
-* No translation needed cause the sidemap from your own (in your native language written) is displayed
-
-## Config.js entry and options
-
+* add MMM-Openhab to your config file and tell it where to find your sitemap.
     {
         module: 'MMM-Openhab',
         position: 'bottom_right',                   // Best in left or right regions
         config: { 
 		
-		url: "http://wr-pi-openhab:8080/basicui/app?sitemap=MMM"   // url of your Openhab sitemap
+		url: "http://YOUROPENHABINSTALL:8080/basicui/app?sitemap=MMM"   // url of your Openhab sitemap
 	
         }
     },
-	
-## Special thanks to CowboysDude and Mykle1 for teaching me!
+* restart Magic Mirror
