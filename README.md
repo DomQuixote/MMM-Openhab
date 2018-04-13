@@ -32,6 +32,7 @@ The only thing you need is local access to your running Openhab System, no API k
 An example of an Openhab2 (version 2.2) modified sitemap file using the html and css values for MagicMirror can be found in the repo. 
 
 * add MMM-Openhab to your config file and tell it where to find your sitemap.
+
     {
         module: 'MMM-Openhab',
         position: 'bottom_right',                   // Best in left or right regions
@@ -41,4 +42,5 @@ An example of an Openhab2 (version 2.2) modified sitemap file using the html and
 	
         }
     },
+    
 * restart Magic Mirror
